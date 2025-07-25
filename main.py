@@ -197,9 +197,57 @@ while True:
 
 
         case "6":
-            pass
+            while True:
+                print("\n-----Calculadora básica-----\n1. Suma\n2. Resta\n3. Multiplicación\n4. División\n5. Salir")
+                select6 = input("Seleccione una opción: ")
+                match select6:
+                    case "1":
+                        while True:
+                            try:
+                                a = int(input("Ingrese el valor 1: "))
+                                b = int(input("Ingrese el valor 2: "))
+                                break
+                            except:
+                                print("Deben ser números enteros")
+                        print("Su suma es de " + suma(a,b))
+
+                    case "2":
+                        while True:
+                            try:
+                                a = int(input("Ingrese el valor 1: "))
+                                b = int(input("Ingrese el valor 2: "))
+                                break
+                            except:
+                                print("Deben ser números enteros")
+                        print("Su resta es de " + resta(a,b))
+
+                    case "3":
+                        while True:
+                            try:
+                                a = int(input("Ingrese el valor 1: "))
+                                b = int(input("Ingrese el valor 2: "))
+                                break
+                            except:
+                                print("Deben ser números enteros")
+                        print("Su producto es de " + multiplicacion(a,b))
+                    case "4":
+                        while True:
+                            try:
+                                a = int(input("Ingrese el valor 1: "))
+                                b = int(input("Ingrese el valor 2: "))
+                                break
+                            except:
+                                print("Deben ser números enteros")
+                        print("Su cociente es de " + round(division(a,b),2))
+
+                    case "5":
+                        print("Saliendo...")
+                        break
+                    case _:
+                        print("Ingrese un valor válido")
         case "7":
-            pass
+            print("Saliendo...")
+            break
         case _:
             print("Opción inválida, Intente nuevamente")
 
