@@ -173,7 +173,29 @@ while True:
             print(f"Hay {risk_zone(notas)} notas menores a 60")
 
         case "5":
-            pass
+            while True:
+                try:
+                    cant5 = int(input("\nIngrese la cantidad de valores a ingresar: "))
+                    if cant5 <= 0:
+                        print("La cantidad debe ser positiva")
+                    else:
+                        break
+                except:
+                    print("Ingrese un número entero")
+            num_list = []
+            for i in range(cant5):
+                while True:
+                    try:
+                        num = int(input(f"Ingrese la nota {i + 1}: "))
+                        num_list.append(num)
+                        break
+                    except:
+                        print("Ingrese un número entero")
+
+            maxim,minim = max_min(num_list)
+            print(f"\nEl valor máximo es {maxim}\nEl valor mínimo es {minim}\n Hay {frecuence(num_list)} valores que se repiten")
+
+
         case "6":
             pass
         case "7":
