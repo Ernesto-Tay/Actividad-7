@@ -116,10 +116,20 @@ while True:
                 mult1 = three_mult(arr1)
                 print(f"La suma total de los valores es de {total1}\nEl promedio de los valores es de {average1}\nIngresó {positive} números positivos, {negative} números negativos y {zero} ceros\nIngresó {mult1} múltiplos de 3")
 
-
-
         case "2":
-            pass
+            while True:
+                try:
+                    width = int(input("\nIngrese el ancho del rectángulo: "))
+                    height =int(input("Ingrese el alto del rectángulo: "))
+                    if width <= 0 or height <= 0:
+                        print("Las medidas deben ser positivas")
+                    else:
+                        break
+                except:
+                    print("Ingrese solo números enteros")
+
+            print(f"El área del rectángulo es de {area_rectangle(width, height)}cm^2\nEl perímetro del rectángulo es de {perimeter_rectangle(width, height)}cm")
+
         case "3":
             pass
         case "4":
