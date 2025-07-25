@@ -36,11 +36,12 @@ def perimeter_rectangle(a, b):
     return 2*a+2*b
 
 def prime(val):
+    unprime = False
     for i in range(round(val/2, 0)):
         if val % i == 0:
-            return False
-        else:
-            return True
+            unprime = True
+    return unprime
+
 
 def safe_zone(arr):
     total = 0
@@ -131,7 +132,21 @@ while True:
             print(f"El área del rectángulo es de {area_rectangle(width, height)}cm^2\nEl perímetro del rectángulo es de {perimeter_rectangle(width, height)}cm")
 
         case "3":
-            pass
+            while True:
+                try:
+                    val = int(input("Ingrese el número a evaluar: "))
+                    if val == 0:
+                        print("El valor no puede ser 0")
+                    else:
+                        break
+                except:
+                    print("Ingrese un número entero")
+            if prime(val):
+                print("El número no es primo")
+            else:
+                print("El número es primo")
+
+
         case "4":
             pass
         case "5":
