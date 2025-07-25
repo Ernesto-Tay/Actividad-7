@@ -90,7 +90,34 @@ while True:
     option = input("Seleccione una opción: ")
     match option:
         case "1":
-            pass
+            while True:
+                try:
+                    cant1 = int(input("\nIngrese la cantidad de valores a ingresar: "))
+                    if cant1 <= 0:
+                        print("La cantidad debe ser positiva")
+                    elif cant1 >=1:
+                        break
+                except:
+                    print("Debe ingresar un número entero")
+
+                arr1 = []
+
+                for i in range(cant1):
+                    while True:
+                        try:
+                            val = int(input(f"Ingrese el valor {i+1}: "))
+                            arr1.append(val)
+                        except:
+                            print("Debe ingresar un valor entero")
+
+                total1 = total_sum(arr1)
+                average1 = avg(arr1)
+                positive, negative, zero = val_sort(arr1)
+                mult1 = three_mult(arr1)
+                print(f"La suma total de los valores es de {total1}\nEl promedio de los valores es de {average1}\nIngresó {positive} números positivos, {negative} números negativos y {zero} ceros\nIngresó {mult1} múltiplos de 3")
+
+
+
         case "2":
             pass
         case "3":
