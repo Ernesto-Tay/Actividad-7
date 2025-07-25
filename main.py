@@ -7,7 +7,7 @@ def total_sum(arr):
 
 def avg(arr):
     total = total_sum(arr)
-    return total / len(arr)
+    return round(total / len(arr),2)
 
 def val_sort(arr):
     positive = 0
@@ -41,7 +41,6 @@ def prime(val):
         if val % i == 0:
             unprime = True
     return unprime
-
 
 def safe_zone(arr):
     total = 0
@@ -148,7 +147,31 @@ while True:
 
 
         case "4":
-            pass
+            while True:
+                try:
+                    cant4 = int(input("\nIngrese la cantidad de notas a ingresar: "))
+                    if cant4 <= 0:
+                        print("La cantidad debe ser positiva")
+                    else:
+                        break
+                except:
+                    print("Ingrese un número entero")
+            notas = []
+            for i in range(cant4):
+                while True:
+                    try:
+                        nota = int(input(f"Ingrese la nota {i+1}: "))
+                        if nota <=0 or nota >100:
+                            print("La nota debe estar entre 0 y 100")
+                        else:
+                            notas.append(nota)
+                            break
+                    except:
+                        print("Ingrese un número entero")
+            print(f"El promedio de las notas es de {avg(notas)}")
+            print(f"Hay {safe_zone(notas)} notas mayores a 85")
+            print(f"Hay {risk_zone(notas)} notas menores a 60")
+
         case "5":
             pass
         case "6":
