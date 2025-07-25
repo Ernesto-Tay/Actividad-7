@@ -16,7 +16,7 @@ def val_sort(arr):
     for val in arr:
         if val > 0:
             positive += 1
-        if val < 0:
+        elif val < 0:
             negative += 1
         else:
             zero += 1
@@ -37,9 +37,10 @@ def perimeter_rectangle(a, b):
 
 def prime(val):
     unprime = False
-    for i in range(round(val/2, 0)):
-        if val % i == 0:
+    for i in range(val//2):
+        if val % (i+1) == 0:
             unprime = True
+            break
     return unprime
 
 def safe_zone(arr):
@@ -209,7 +210,7 @@ while True:
                                 break
                             except:
                                 print("Deben ser números enteros")
-                        print("Su suma es de " + suma(a,b))
+                        print("Su suma es de " + str(suma(a,b)))
 
                     case "2":
                         while True:
@@ -219,7 +220,7 @@ while True:
                                 break
                             except:
                                 print("Deben ser números enteros")
-                        print("Su resta es de " + resta(a,b))
+                        print("Su resta es de " + str(resta(a,b)))
 
                     case "3":
                         while True:
@@ -229,7 +230,7 @@ while True:
                                 break
                             except:
                                 print("Deben ser números enteros")
-                        print("Su producto es de " + multiplicacion(a,b))
+                        print("Su producto es de " + str(multiplicacion(a,b)))
                     case "4":
                         while True:
                             try:
@@ -238,7 +239,7 @@ while True:
                                 break
                             except:
                                 print("Deben ser números enteros")
-                        print("Su cociente es de " + round(division(a,b),2))
+                        print("Su cociente es de " + str(round(division(a,b),2)))
 
                     case "5":
                         print("Saliendo...")
